@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
+			putchar(format[i]);
 			sum++;
 		}
 		i++;
