@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			sum++;
 		}
+		i++;
 	}
 	return (sum);
 }
