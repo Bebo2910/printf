@@ -24,7 +24,7 @@ int print_char(va_list ap)
 
 int print_percent(va_list ap)
 {
-	unsigned int ch = va_arg(arg, int);
+	unsigned int ch = va_arg(ap, int);
 
 	_putchar(ch);
 	return (1);
