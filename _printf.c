@@ -30,9 +30,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; find[j].specifier; j++)
+			for (j = 0; find[j].spec; j++)
 			{
-				if (format[i] == find[j].specifer[0])
+				if (format[i] == find[j].spec[0])
 				{
 					sum += find[j].f(ap);
 				}
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			sum++;
 		}
 		i++;
