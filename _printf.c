@@ -12,6 +12,12 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0, j, sum = 0;
+	specifier_t find[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"%", print_percent},
+		{NULL, NULL}
+	}
 
 	va_start(ap, format);
 	if (format)
@@ -24,21 +30,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch (format[i])
+			for (j = 0; find[j].specifier; j++)
 			{
-				case 'c':
-					sum += print_char(ap);
-					break;
-				case 's':
-					sum += print_string(ap);
-					break;
-				case '%':
-					sum += print_percent(ap);
-					break;
-				default:
-					_putchar(format[i]);
-					sum++;
-					break;
+				if (format[i] == find[j].specifer[0])
+				{
+					sum += find[j].f(ap);
+				}
 			}
 		}
 		else
