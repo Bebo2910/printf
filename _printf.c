@@ -20,12 +20,12 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
+	va_start(ap, format);
 	if (format)
 	{
 		return (-1);
 	}
 
-	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -47,5 +47,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	va_end(ap);
 	return (sum);
 }

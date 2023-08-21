@@ -5,7 +5,7 @@
 #include<stdarg.h>
 #define NULL_STRING "(null)"
 
-typedef struct speacifier
+typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list);
