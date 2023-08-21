@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			sum++;
-			for (j = 0; find[j].specifier[0]; j++)
+			for (j = 0; find[j].specifier; j++)
 			{
 				if (format[i] == find[j].specifier[0])
 				{
