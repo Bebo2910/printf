@@ -10,9 +10,7 @@
 
 int print_char(va_list ap)
 {
-	unsigned int ch = va_arg(ap, int);
-
-	_putchar(ch);
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 /**
@@ -24,9 +22,7 @@ int print_char(va_list ap)
 
 int print_percent(va_list ap)
 {
-	unsigned int ch = va_arg(ap, int);
-
-	_putchar(ch);
+	_putchar(va_arg(ap, int));
 	return (1);
 }
 /**
