@@ -1,9 +1,9 @@
-#ifndef _PRINTF_H
-#define _PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include<stdio.h>
 #include<stdarg.h>
-#define NULL_STRING "(null)"
+#include<stdlib.h>
 
 typedef struct specifier
 {
