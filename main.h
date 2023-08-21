@@ -11,6 +11,7 @@ typedef struct speacifier
 	int (*f)(va_list);
 } specifier_t;
 
+int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list ap);
 int print_string(va_list ap);
