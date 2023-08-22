@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 			case 's':
 				sum += print_string(va_arg(ap, char *));
 				j++;
-				break
+				break;
 		}
 	}
 	va_end(ap);
