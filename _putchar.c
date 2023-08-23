@@ -1,14 +1,14 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * putchar - print char  c
- * @c: character to print
- * Return: on success 1
- * on error, -1 is returned, otherwise NULL
- */
+  * _putchar - func
+  * @c: char
+  * Return: final
+  *
+  *
+  */
 
-int _putchat(char c)
-i{
+int _putchar(char c)
+{
 	return (write(1, &c, 1));
-
 }
