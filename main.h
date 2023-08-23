@@ -14,4 +14,6 @@ int print_percent(void);
 int print_string(char *s);
 int print_char(int s);
 
+int print_brinary(unsigned int num);
+
 #endif

@@ -80,3 +80,33 @@ int print_percent(void)
 {
 	return (_putchar('%'));
 }
+
+/**
+  * print_binary - binary
+  * @num: num
+  * Return: sum
+  *
+  *
+  *
+  */
+
+int print_brinary(unsigned int num)
+{
+	unsigned int number = num;
+	int i = 0, index, sum = 0;
+	int *a;
+
+	while (number != 0)
+	{
+		a[i] = number % 2;
+		number = number / 2;
+		i++;
+	}
+
+	for (index = i - 1; index >= 0; index--)
+	{
+		sum += _putchar(a[index] + '0');
+	}
+
+	return (sum);
+}

@@ -46,6 +46,10 @@ int _printf(const char *format, ...)
 				sum += print_string(va_arg(ap, char *));
 				j++;
 				break;
+			case 'b':
+				sum += print_brinary(va_arg(ap, unsigned int));
+				j++;
+				break;
 		}
 	}
 	va_end(ap);
