@@ -66,7 +66,7 @@ int print_string(char *s)
 		_putchar(s[i]);
 	}
 
-	return (sum - 1);
+	return (sum);
 }
 
 /**

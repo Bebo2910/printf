@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 				j++;
 				break;
 			case 's':
-				sum += print_string(va_arg(ap, char *)) - 1;
+				sum += print_string(va_arg(ap, char *));
 				j++;
 				break;
 		}
