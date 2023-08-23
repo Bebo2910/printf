@@ -23,9 +23,8 @@ int print_char(int s)
   *
   *
   */
-int print_int(int num)
+int print_int(long int num)
 {
-	(long int)num;
 	int divisor = 1;
 	int sum = 0;
 

@@ -7,7 +7,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 
-int print_int(int num);
+int print_int(long int num);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_percent(void);
