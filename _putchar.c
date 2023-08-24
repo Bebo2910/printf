@@ -1,12 +1,10 @@
-#include "main.h"
+#include <unistd.h>
 
 /**
-  * _putchar - func
-  * @c: char
-  * Return: final
-  *
-  *
-  */
+ * _putchar - print fmt char
+ * @c: is the char to be printed
+ * Return: 1 on success.
+ */
 
 int _putchar(char c)
 {
