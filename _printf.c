@@ -1,68 +1,53 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
-
 /**
- * _printf - Printf function
- * @format: format.
- * Return: Printed chars.
- */
+  * _printf - function
+  * @format: format
+  * Return: sum
+  *
+  *
+  *
+  */
 int _printf(const char *format, ...)
 {
-	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, buff_ind = 0;
-	va_list list;
-	char buffer[BUFF_SIZE];
+	int sum = 0, j = 0;
+	va_list ap;
 
-	if (format == NULL)
-		return (-1);
+	va_start(ap, format);
 
-	va_start(list, format);
-
-	for (i = 0; format && format[i] != '\0'; i++)
+	while (format && format[j])
 	{
-		if (format[i] != '%')
+		if (format[j] != '%')
 		{
-			buffer[buff_ind++] = format[i];
-			if (buff_ind == BUFF_SIZE)
-				print_buffer(buffer, &buff_ind);
-			/* write(1, &format[i], 1);*/
-			printed_chars++;
+			sum += _putchar(format[j]);
+			j++;
+			continue;
 		}
-		else
+		j++;
+		switch (format[j])
 		{
-			print_buffer(buffer, &buff_ind);
-			flags = get_flags(format, &i);
-			width = get_width(format, &i, list);
-			precision = get_precision(format, &i, list);
-			size = get_size(format, &i);
-			++i;
-			printed = handle_print(format, &i, list, buffer,
-				flags, width, precision, size);
-			if (printed == -1)
-				return (-1);
-			printed_chars += printed;
+			case 'i':
+				sum += print_int(va_arg(ap, int));
+				j++;
+				break;
+			case 'd':
+				sum += print_int(va_arg(ap, int));
+				j++;
+				break;
+			case 'c':
+				sum += print_char(va_arg(ap, int));
+				j++;
+				break;
+			case '%':
+				sum += print_percent();
+				j++;
+				break;
+			case 's':
+				sum += print_string(va_arg(ap, char *));
+				j++;
+				break;
 		}
 	}
-
-	print_buffer(buffer, &buff_ind);
-
-	va_end(list);
-
-	return (printed_chars);
-}
-
-/**
- * print_buffer - Prints the contents of the buffer if it exist
- * @buffer: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
- */
-void print_buffer(char buffer[], int *buff_ind)
-{
-	if (*buff_ind > 0)
-		write(1, &buffer[0],
-
-	*buff_ind);
-
-
+	va_end(ap);
+	return (sum);
 }
